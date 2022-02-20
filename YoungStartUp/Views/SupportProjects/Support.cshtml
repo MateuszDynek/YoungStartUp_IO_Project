@@ -1,0 +1,26 @@
+﻿@model YoungStartUp.Models.UserProjectPageModel;
+@{ ViewData["Title"] = "Support Project"; }
+
+
+
+
+@using (Html.BeginForm("Payment", "SupportProjects", FormMethod.Post,
+                              new { @class = "login-form" }))
+{
+
+<div class="login-form-content">
+    <div class="login-form-header">
+        <h2>Project Support</h2>
+    </div>
+    <div style="text-align:center">
+        <h3>Support our project!</h3>
+        <h4>Enter Blik 6-number code below </h4>
+        <label for="price">Project price: @Model.project.Price  </label>
+        <h5></h5>
+        <input type="text" id="price" name="price"
+               pattern="[0-9]{6}"
+               required>
+
+        <button class="login-form-button" style="margin-top:10px" type="submit" value="SignIn">Support!</button>
+    </div>
+</div>}

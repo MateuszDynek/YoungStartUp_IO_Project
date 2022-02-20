@@ -1,0 +1,21 @@
+﻿@model YoungStartUp.Models.LogInUser
+@{
+    ViewData["Title"] = "Browse Projects";
+}
+<div>
+    <div class="boxx boxx6" style="height:100px">
+        @using (Html.BeginForm("BanSelectedUser", "AdminLogin", FormMethod.Post))
+        {
+
+            @Html.HiddenFor(x => x.IdLogInUser)
+
+            <button type="submit" style="background-color:transparent; border:none">
+
+                <h1 class="signin-button" style="text-align:center">@Model.Username</h1>
+                
+
+            </button>
+        }
+
+    </div>
+</div>

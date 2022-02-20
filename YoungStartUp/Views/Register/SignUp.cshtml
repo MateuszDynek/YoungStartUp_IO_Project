@@ -1,0 +1,44 @@
+﻿@model YoungStartUp.Models.LogInUser
+@{
+    ViewData["Title"] = "SignUp";
+}
+
+
+
+
+@using (Html.BeginForm("SignUp", "Register", FormMethod.Post,
+                               new { @class = "login-form" }))
+{
+    <div class="login-form-logo-container">
+        <img class="login-form-logo" src="~/img/logo.png" alt="Logo">
+    </div>
+    <div class="login-form-content">
+        <div class="login-form-header">Register your account</div>
+        @if (ViewBag.error != null)
+        {
+            <div class="d-flex justify-content-center">
+                <h5><span class="badge badge-danger">@ViewBag.error</span></h5>
+            </div>
+        }
+        @if (ViewBag.Success != null)
+        {
+            <div class="d-flex justify-content-center">
+                <h5><span class="badge badge-success">@ViewBag.Success</span></h5>
+            </div>
+        }
+        <h3>Name</h3>
+        @Html.TextBoxFor(m => m.FirstName, new { @class = "login-form-input" })
+        <h3>Surname</h3>
+        @Html.TextBoxFor(m => m.LastName, new { @class = "login-form-input" })
+        <h3>Username</h3>
+        @Html.TextBoxFor(m => m.Username, new { @class = "login-form-input" })
+        <h3>Password</h3>
+        @Html.PasswordFor(m => m.Password, new { @class = "login-form-input" })
+        <h3>E-mail</h3>
+        @Html.TextBoxFor(m => m.Email, new { @class = "login-form-input" })
+        <h3>Phone Number</h3>
+        @Html.TextBoxFor(m => m.PhoneNr, new { @class = "login-form-input" })
+
+        <button class="login-form-button" type="submit" value="SignUp">Register</button>
+    </div>
+}

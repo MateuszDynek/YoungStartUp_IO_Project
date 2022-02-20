@@ -1,0 +1,21 @@
+﻿@model YoungStartUp.Models.Message
+@{ ViewData["Title"] = "Message to Project Owner"; }
+
+
+
+
+@using (Html.BeginForm("SendMessage", "Contact", FormMethod.Post,
+                               new { @class = "login-form" }))
+{
+<div class="login-form-content">
+    <div class="login-form-header">
+        <h2>Contact Form</h2>
+    </div>
+    <div style="text-align:center">
+        <h3>Write Your Message</h3>
+        @Html.HiddenFor(m => m.project.IdProject)
+        @Html.HiddenFor(m => m.project.LogInUser_IdLogInUser)
+        @Html.TextAreaFor(m => m.content, new { @class = "login-form" })
+        <button class="login-form-button" type="submit" value="SendMessage">Send Message!</button>
+    </div>
+</div>}

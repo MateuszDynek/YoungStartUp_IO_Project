@@ -1,0 +1,24 @@
+﻿@model YoungStartUp.Models.Rating
+@{
+    ViewData["Title"] = "Add Rate to Project";
+}
+
+@using (Html.BeginForm("AddScoreToProject2", "BrowseProjects", FormMethod.Post,
+                               new { @class = "login-form" }))
+{
+    @Html.HiddenFor(m => m.Project_IdProject)
+    @Html.HiddenFor(m=>m.LogInUser_IdLogInUser)
+    <div class="login-form-content">
+        <div class="login-form-header">
+            <h2>Rate Panel</h2>
+        </div>
+        <div style="text-align:center">
+            <h3>Choose Project Rate</h3>
+            @Html.DropDownListFor(m => m.Ratings,
+                    new SelectList(Enum.GetValues(typeof(ProjectRate)))
+                    , new { @class = "add-project-form-input" })
+
+            <button class="login-form-button" type="submit" value="SignIn">Send Message!</button>
+        </div>
+    </div>
+}

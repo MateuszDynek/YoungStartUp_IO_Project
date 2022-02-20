@@ -1,0 +1,68 @@
+﻿@model YoungStartUp.Models.ProjectList
+@{
+    ViewData["Title"] = "Browse Projects";
+}
+
+<div class="align-content-center">
+
+    <div>
+        @using (Html.BeginForm("Search", "BrowseProjects", FormMethod.Get))
+        {
+            <div style="display:flex">
+                <div style="flex:20%">
+                    <p class="add-project-text">Title</p>
+                    <input name="Title" class="form-control" />
+                </div>
+                <div style="flex:20%; margin-left:20px">
+                    <p class="add-project-text">Description</p>
+                    <input name="Description" class="form-control" />
+                </div>
+                
+                <div style="flex:20%; margin-left:20px; margin-top:5px">
+                    <p></p>
+                    <input type="submit" class="login-form-button" value="Search" name="Search" />
+                </div>
+            </div>
+        }
+    <div style="width:150px;display:flex; margin-top:20px">
+        <div style="flex:25%">
+            @using (Html.BeginForm("SortAscDate", "BrowseProjects", FormMethod.Get))
+            {
+                <input type="submit" class="login-form-button" value="Sort Ascending by Date" name="Sort Ascending by Date" />}
+        </div>
+        <div style="flex:25%; margin-left:20px">
+            @using (Html.BeginForm("SortDescDate", "BrowseProjects", FormMethod.Get))
+            {
+                <input type="submit" class="login-form-button" value="Sort Descending by Date" name="Sort Descending by Date" />}
+        </div>
+        <div style="flex:25%;margin-left:20px">
+            @using (Html.BeginForm("SortDescAlphabetic", "BrowseProjects", FormMethod.Get))
+            {
+                <input type="submit" class="login-form-button" value="Sort Descending Alphabetic" name="Sort Descending Alphabetic" />}
+        </div>
+        <div style="flex:25%;margin-left:20px">
+            @using (Html.BeginForm("SortAscAlphabetic", "BrowseProjects", FormMethod.Get))
+            {
+                <input type="submit" class="login-form-button" value="Sort Ascending Alphabetic" name="Sort Ascending Alphabetic" />}
+        </div>
+    </div>
+         <div class="quote">
+
+            @foreach (var p in Model.ProjectsList)
+            {
+                <div>
+                    @Html.Partial("OneProject", p);
+                    <div>
+                        @for (int j = 0; j < ViewBag.UsersSize; j++)
+                        {
+                            @if (p.LogInUser_IdLogInUser == ViewBag.Users[j].IdLogInUser)
+                            {
+                                <h2 class="signin-button">@ViewBag.Users[j].Username</h2>
+                            }
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

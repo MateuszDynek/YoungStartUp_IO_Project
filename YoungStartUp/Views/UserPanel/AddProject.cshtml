@@ -1,0 +1,74 @@
+﻿@model YoungStartUp.Models.Project
+@{
+    ViewData["Title"] = "Add Project Form";
+}
+
+<div class="align-content-center">
+    @using (Html.BeginForm("AddProject", "UserPanel", FormMethod.Post,
+                           new { @class = "add-project-form" }))
+    {
+    <div class="add-project-form-logo-container">
+        <div style="display:flex">
+            <div style="flex:40%">
+                <img class="add-project-form-logo" src="~/img/logo.png" alt="Logo">
+            </div>
+            <div style="flex:60%; margin-top:20px;">
+                <h1 class="display-4 quote-style">Add Project Panel</h1>
+            </div>
+        </div>
+        <div>
+            <h3 class="add-project-text nav-link">Project Name</h3>
+            @Html.TextBoxFor(m => m.Title, new { @class = "add-project-form-input" })
+            <h3 class="add-project-text-desc nav-link">Project Description</h3>
+            @Html.TextAreaFor(m => m.Description, new { @class = "add-project-form-input-desc" })
+
+        </div>
+        <div style="display:flex;">
+            <div style="flex:50%;">
+                <h3 class="add-project-text">Link to github</h3>
+                @Html.TextBoxFor(m => m.GitLink, new { @class = "add-project-form-input" })
+            </div>
+            <div style="flex:50%; margin-left:5px;">
+                <h3 class="add-project-text">Choose project type</h3>
+                @Html.DropDownListFor(m => m.Target,
+                new SelectList(Enum.GetValues(typeof(Target))),
+                "Other", new { @class = "add-project-form-input" })
+            </div>
+        </div>
+        <div style="display:flex;">
+            <div style="flex:50%;">
+                <h3 class="add-project-text">Link to file in exe format</h3>
+                @Html.TextBoxFor(m => m.ExeLink, new { @class = "add-project-form-input" })
+            </div>
+            <div style="flex:50%; margin-left:5px">
+                <h3 class="add-project-text">Link to web where project is hosted</h3>
+                @Html.TextBoxFor(m => m.HostLink, new { @class = "add-project-form-input" })
+            </div>
+        </div>
+        <div style="display:flex">
+            <div style="flex:50%;">
+                <h3 class="add-project-text">Choose share type</h3>
+                @Html.DropDownListFor(m => m.ShareType,
+                    new SelectList(Enum.GetValues(typeof(ShareType)))
+                    , new { @class = "add-project-form-input" })
+            </div>
+            <div style="flex:50%; margin-left:5px;" >
+                <h3 class="add-project-text">Set Project Price</h3>
+                @Html.TextBoxFor(m => m.Price, new { @class = "add-project-form-input" })
+            </div>
+        </div>
+        @if (ViewBag.success != null)
+        {
+            <div class="d-flex justify-content-center">
+                <h5><span class="badge badge-success">@ViewBag.success</span></h5>
+            </div>
+        }
+    </div>
+        
+        <div class="login-form-content">
+            <button class="login-form-button" type="submit" value="AddProject">Add Project</button>
+        </div>
+    }
+</div>
+
+

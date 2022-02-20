@@ -1,0 +1,163 @@
+﻿@model YoungStartUp.Models.UserProjectPageModel
+@{
+    ViewData["Title"] = "My Project";
+}
+
+<div class="align-content-center" style="margin-top:40px">
+    <div style="display:flex">
+        <div class="project-logo-container" style="flex:45%;background: #334259;border:2px solid aliceblue; height:400px;">
+            @if (((int)Model.project.Target) == 0)
+            {
+
+                <img style="width: 350px; height: 350px; margin-left:14%; margin-top:5%" src="~/img/game-console.png" />
+            }
+            else if ((int)Model.project.Target == 1)
+            {
+                <img style="width: 350px; height: 350px; margin-left:14%; margin-top:5%" src="~/img/internet-of-things.png" />
+            }
+            else if ((int)Model.project.Target == 2)
+            {
+                <img style="width: 350px; height: 350px; margin-left:14%; margin-top:5%" src="~/img/programing.png" />
+            }
+            else if ((int)Model.project.Target == 3)
+            {
+                <img style="width: 350px; height: 350px; margin-left:14%; margin-top:5%" src="~/img/web_app.png" />
+            }
+            else if ((int)Model.project.Target == 4)
+            {
+                <img style="width: 350px; height: 350px; margin-left:14%; margin-top:5%" src="~/img/bot.png" />
+            }
+            else
+            {
+                <img style="width: 350px; height: 350px; margin-left:14%; margin-top:5%" src="~/img/antispam.png" />
+            }
+        </div>
+        <div style="flex:55%; margin-left:40px; background: #4f607d;border:2px solid aliceblue; height:400px;">
+            <div style="text-align:center; margin-top:40px">
+                @for (int i = 0; i < Model.project.Rating; i++)
+                {
+                <img style="width:40px; height:40px" src="~/img/star.png" />
+                }
+
+
+                <h2 class="add-project-text">Projest Name: @Model.project.Title</h2>
+                <h2 class="add-project-text">Author: @ViewBag.User.Username</h2>
+                @if (@Model.project.ShareType == 0)
+                {
+
+                    <h2 class="add-project-text">Share Type: Paid </h2>
+                    @using Microsoft.AspNetCore.Http;
+                    @if (@Context.Session.GetString("username") != null)
+                    {
+                        <div style="display:flex">
+                            <div style="flex:33%; margin-left:130px">
+                                @using (Html.BeginForm("Support", "SupportProjects", FormMethod.Post))
+                                {
+                                    @Html.HiddenFor(m=>m.project.Price)
+                                    @Html.HiddenFor(m=>m.project.IdProject)
+                                    <button class="login-form-button" style="width:80px;margin-top:10px" type="submit" value="SignIn">Support!</button>
+                                }
+                            </div>
+                            <div style="flex:33%;margin-right:10px">
+                                @using (Html.BeginForm("Message", "Contact", FormMethod.Post))
+                                {
+                                    <button class="login-form-button" style="width:80px;margin-top:10px;" type="submit" value="SignIn">Contact!</button>
+                                    @Html.HiddenFor(m => m.project.IdProject)
+                                    @Html.HiddenFor(m => m.project.LogInUser_IdLogInUser)
+                                }
+                            </div>
+                            <div style="flex:33%; margin-right:100px">
+                                @using (Html.BeginForm("AddScoreToProject", "BrowseProjects", FormMethod.Post))
+                                {
+                                    @Html.HiddenFor(m=>m.project.IdProject)
+                                    <button class="login-form-button" style="width:120px;margin-top:10px;" type="submit" value="SignIn">Rate Project!</button>
+                                }
+                            </div>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <h2 class="add-project-text">Share Type: Free </h2>
+                    <div style="display:flex">
+                        @if (@Context.Session.GetString("username") != null)
+                        {
+                        <div style="flex:50%; margin-left:190px">
+                            @using (Html.BeginForm("Message", "Contact", FormMethod.Post))
+                            {
+                                <button class="login-form-button" style="width:80px;margin-top:10px;" type="submit" value="SignIn">Contact!</button>
+                                @Html.HiddenFor(m => m.project.IdProject)
+                                @Html.HiddenFor(m => m.project.LogInUser_IdLogInUser)  
+                            }
+                        </div>
+                        <div style="flex:50%; margin-right:180px">
+                            @using (Html.BeginForm("AddScoreToProject", "BrowseProjects", FormMethod.Post))
+                            {
+                                @Html.HiddenFor(m => m.project.IdProject)
+                                <button class="login-form-button" style="width:120px;margin-top:10px;" type="submit" value="SignIn">Rate Project!</button>
+                            }
+                        </div>
+                        }
+                    </div>
+                }
+
+                @if (Model.project.GitLink != null)
+                {
+                    <a href="@Model.project.GitLink">
+                        <img style="width:60px; height:60px; padding:10px" src="~/img/github-logo.png" />
+                    </a>
+                }
+                @if (Model.project.HostLink != null)
+                {
+                    <a href="@Model.project.HostLink">
+                        <img style="width:60px; height:60px; padding:10px" src="~/img/web.png" />
+                    </a>
+                }
+                @if (Model.project.ExeLink != null)
+                {
+                    <a href="@Model.project.ExeLink">
+                        <img style="width:60px; height:60px; padding:10px" src="~/img/exe-file.png" />
+                    </a>
+                }
+            </div>
+        </div>
+    </div>
+    <div style="background: #2b3e59;border:2px solid aliceblue; padding:20px; margin-top:40px; margin-bottom:40px">
+        <div>
+            <h2 class="add-project-text">@Model.project.Description</h2>
+        </div>
+    </div>
+    <div>
+        <h2 class="signin-button">Comments: </h2>
+        <div style="background: linear-gradient(#1d468f,#3c495e);border:2px solid aliceblue; padding:20px; margin-top:40px; margin-bottom:40px">
+            @foreach (Comment c in Model.comments)
+            {
+            <div style="background:#334259;border:2px solid #000000; padding:5px; margin-top:10px; margin-bottom:10px">
+                <p class="add-project-text">@c.Content</p>
+            </div>
+            }
+        </div>
+    </div>
+    @using (Html.BeginForm("AddComment", "BrowseProjects", FormMethod.Post))
+    {
+        @if (ViewBag.CommentError != null)
+        {
+            <div class="d-flex justify-content-center">
+                <h5><span class="badge badge-danger">@ViewBag.CommentError</span></h5>
+            </div>
+        }
+        @if (ViewBag.CommentSuccess != null)
+        {
+            <div class="d-flex justify-content-center">
+                <h5><span class="badge badge-success">@ViewBag.CommentSuccess</span></h5>
+            </div>
+        }
+
+        <h2 class="signin-button">Add Comment: </h2>
+        @Html.HiddenFor(m => m.project.IdProject)
+        @Html.HiddenFor(m => m.project.LogInUser_IdLogInUser)
+        @Html.TextAreaFor(m => m.comment.Content, new { @class = "add-project-form-input-desc" })
+
+        <button class="login-form-button" style="margin-bottom:40px; margin-top:20px" type="submit" value="AddComment">Submit</button>
+    }
+</div>

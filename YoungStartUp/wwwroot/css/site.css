@@ -1,0 +1,444 @@
+﻿
+/*Main styles*/
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+a {
+    color: #0366d6;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+.nav-link {
+    color: aliceblue;
+}
+
+html {
+    font-size: 16px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+/*link style*/
+.link-style {
+    color: aliceblue;
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+/*Main quote style on start page*/
+.quote-style {
+    color: white;
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+    font-family: 'Agency FB';
+}
+
+.quote-form {
+    border: 2px solid #ffcc40;
+    margin: 40px auto;
+    border-radius: 5px;
+    overflow: hidden;
+    width: 1200px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+/*Navbar highlight border style*/
+.my-border-bottom {
+    border-bottom: 2px solid #ffcc40;
+    transition: border-bottom 1s;
+    text-decoration: none;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+}
+
+    .my-border-bottom:hover {
+        border-bottom: 2px solid red;
+    }
+/*Footer highlight border style*/
+.my-border-top {
+    border-top: 2px solid #ffcc40;
+    transition: border-top 1s;
+    text-decoration: none;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+}
+
+    .my-border-top:hover {
+        border-top: 2px solid green;
+    }
+/*Logo style*/
+.main-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+}
+
+/*Navbar options style*/
+.navbar-brand {
+    font-size: 32px;
+    color: #ffcc40;
+    margin: 10px;
+    transition: color 1s;
+    text-decoration: none;
+}
+
+    .navbar-brand:hover {
+        color: red;
+    }
+
+.nav-button {
+    color: white;
+    transition: color 1s;
+    text-decoration: none;
+}
+
+    .nav-button:hover {
+        color: dimgrey;
+    }
+
+.signup-button {
+    color: #49ba43;
+    transition: color 1s;
+    text-decoration: none;
+}
+
+    .signup-button:hover {
+        color: dimgrey;
+    }
+
+.signin-button {
+    color: #ffcc40;
+    transition: color 1s;
+    text-decoration: none;
+}
+
+    .signin-button:hover {
+        color: dimgrey;
+    }
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    background-color: #1c1c1c
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px; /* Vertically center the text there */
+}
+
+
+.login-form {
+    max-width: 390px;
+    margin: 40px auto;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+}
+
+.login-form-logo-container {
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.login-form-logo {
+    display: block;
+    max-width: 125px;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+.login-form-content {
+    padding: 25px;
+    background: #ffffff;
+}
+
+.login-form-header {
+    margin-bottom: 15px;
+    text-align: center;
+    color: #333333;
+}
+
+.login-form-input {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #dddddd;
+    background: #ffffff;
+    outline: none;
+    transition: border-color 0.5s;
+}
+
+    .login-form-input:focus {
+        border-color: #007595;
+    }
+
+.login-form-button {
+    padding: 10px;
+    color: #ffffff;
+    font-weight: bold;
+    background: #007595;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+    .login-form-button:active {
+        background: #008067;
+    }
+
+.login-form-links {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.login-form-link {
+    font-size: 0.9em;
+    color: #008067;
+    text-decoration: none;
+}
+
+.project-form {
+}
+
+.quote {
+    width: 1200px;
+    min-height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    z-index: 2;
+}
+
+    .quote .box {
+        position: relative;
+        width: 360px;
+        grid-row-end: 400;
+        background: #fff;
+        overflow: hidden;
+        transition: 0.5s;
+        z-index: 2;
+        box-sizing: border-box;
+        padding: 30px;
+        box-shadow: -10px 25px 50px rgba(0,0,0,0.2);
+    }
+
+        .quote .box:hover {
+            box-shadow: -20px 50px 100px rgba(0,0,0,0.5);
+        }
+
+    .quote .bg {
+        position: absolute;
+        top: 96px;
+        left: 0;
+        z-index: 0;
+        opacity: 0;
+        transition: 0.5s;
+        pointer-events: none;
+        width: 100%;
+        height: 85%;
+    }
+
+    .quote .box p {
+        margin: 0;
+        padding: 0;
+        font-size: 18px;
+    }
+
+    .quote .box:hover p {
+        color: #fff;
+    }
+
+    .quote .box h2 {
+        position: absolute;
+        bottom: 5px;
+        right: 20px;
+        margin: 0;
+        padding: 0;
+        font-size: 20px;
+    }
+
+    .quote .box.box1:hover ~ .bg,
+    .quote .box.box1:hover {
+        opacity: 1;
+        background: linear-gradient(#03A9F4,#E91E63);
+    }
+
+    .quote .box.box2:hover ~ .bg,
+    .quote .box.box2:hover {
+        opacity: 1;
+        background: linear-gradient(#FFC107,#19FD36);
+    }
+
+    .quote .box.box3:hover ~ .bg,
+    .quote .box.box3:hover {
+        opacity: 1;
+        background: linear-gradient(#FFC107,#E91E63);
+    }
+
+    .quote .box.box4:hover ~ .bg,
+    .quote .box.box4:hover {
+        opacity: 1;
+        background: linear-gradient(#d403f4,#1e58e9);
+    }
+
+    .quote .box.box5:hover ~ .bg,
+    .quote .box.box5:hover {
+        opacity: 1;
+        background: linear-gradient( #1ee958,#e9d51e);
+    }
+
+    .quote .box.box6:hover ~ .bg,
+    .quote .box.box6:hover {
+        opacity: 1;
+        background: linear-gradient(#f4032b,#1e3ce9);
+    }
+
+    .quote .box:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -50%;
+        width: 100%;
+        height: 100%;
+        background: rgba(255,255,255,0.2);
+        pointer-events: none;
+    }
+    .quote .boxx {
+        position: relative;
+        width: 360px;
+        grid-row-end: 400;
+        background: rgba(0, 0, 0, 0.15);
+        overflow: hidden;
+        transition: 0.5s;
+        z-index: 2;
+        box-sizing: border-box;
+        padding: 30px;
+        box-shadow: -10px 25px 50px rgba(0,0,0,0.2);
+    }
+    .quote .boxx.boxx1:hover ~ .bg,
+    .quote .boxx.boxx1:hover {
+        opacity: 1;
+        background: linear-gradient(#03A9F4,#E91E63);
+    }
+    .quote .boxx.boxx6:hover ~ .bg,
+    .quote .boxx.boxx6:hover {
+        opacity: 1;
+        background: linear-gradient(#f4032b,#1e3ce9);
+    }
+
+.project-img {
+    width: 90px;
+    height: 90px;
+}
+
+/*Add project panel*/
+.add-project-form {
+    max-width: 600px;
+    margin: 40px auto;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+}
+
+.add-project-form-logo-container {
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.25);
+    
+}
+
+.add-project-form-logo {
+    display: block;
+    max-width: 125px;
+    border-radius: 10px;
+    
+}
+
+.add-project-text {
+    margin:auto;
+    color: aliceblue;
+    
+}
+.add-project-form-input {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #dddddd;
+    background: #ffffff;
+    outline: none;
+    transition: border-color 0.5s;
+    
+}
+
+    .add-project-form-input:focus {
+        border-color: #007595;
+    }
+
+.add-project-text-desc {
+    margin: auto;
+    color: aliceblue;
+    
+}
+.add-project-form-input-desc {
+    width: 100%;
+    height: 200px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #dddddd;
+    background: #ffffff;
+    outline: none;
+    transition: border-color 0.5s;
+}
+
+    .add-project-form-input-desc:focus {
+        border-color: #007595;
+    }
+
+.project-logo-container {
+    background: #334259;
+    border:2px solid aliceblue;
+}
+
+
+

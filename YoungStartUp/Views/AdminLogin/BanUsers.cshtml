@@ -1,0 +1,29 @@
+﻿@model YoungStartUp.Models.UsersList
+@{
+    ViewData["Title"] = "Ban Users";
+}
+
+<div class="align-content-center">
+
+
+    <div class="quote">
+
+        @foreach (var p in Model.usersList)
+        {
+            <div>
+                @Html.Partial("OneUser", p);
+                <div>
+                    <h2 class="nav-link">@p.Username 's Projects:</h2>
+                    @for (int j = 0; j < ViewBag.ProjectsSize; j++)
+                    {
+                        @if (p.IdLogInUser == ViewBag.Projects[j].LogInUser_IdLogInUser)
+                        {
+                            <h2 class="signin-button">@ViewBag.Projects[j].Title</h2>
+                        }
+                    }
+                </div>
+            </div>
+        }
+
+    </div>
+</div>

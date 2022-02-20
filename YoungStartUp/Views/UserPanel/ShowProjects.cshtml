@@ -1,0 +1,70 @@
+﻿@model YoungStartUp.Models.ProjectList
+@{
+    ViewData["Title"] = "My Projects";
+}
+<div class="align-content-center">
+    <div class="quote">
+        @foreach (var p in Model.ProjectsList)
+        {
+        <div>
+            @Html.Partial("OneProject", p);
+            <div>
+                @for (int j = 0; j < ViewBag.UsersSize; j++)
+                {
+                    @if (p.LogInUser_IdLogInUser == ViewBag.Users[j].IdLogInUser)
+                    {
+                        <h2 class="signin-button">@ViewBag.Users[j].Username</h2>
+                    }
+                }
+            </div>
+        </div>
+        }
+        @{ /*
+            @for (int i = 0; i < ViewBag.ProjectsSize; i++)
+            {
+                @if (ViewBag.Projects[i].LogInUser_IdLogInUser == ViewBag.UserId)
+                {
+                <div>
+                    <h1 class="nav-link" style="font-size:25px" ;>@ViewBag.Projects[i].Title</h1>
+                    <div class="box box1" style="height:285px">
+                        @using (Html.BeginForm("UserProjectPage", "BrowseProjects", FormMethod.Post))
+                        {
+                            Html.HiddenFor()
+                            <button type="submit" style="background-color:transparent; border:none;">
+                                @if (ViewBag.Projects[i].Target == 0)
+                                {
+                                    <img class="project-img" src="~/img/game-console.png" />
+                                }
+                                else if (ViewBag.Projects[i].Target == 1)
+                                {
+                                    <img class="project-img" src="~/img/internet-of-things.png" />
+                                }
+                                else
+                                {
+                                    <img class="project-img" src="~/img/antispam.png" />
+                                }
+
+                                <p>
+                                    @ViewBag.Projects[i].Description
+                                </p>
+
+                            </button>
+                        }
+                    </div>
+                    <div>
+                        @for (int j = 0; j < ViewBag.UsersSize; j++)
+                        {
+                            @if (ViewBag.Projects[i].LogInUser_IdLogInUser == ViewBag.Users[j].IdLogInUser)
+                            {
+                                <h2 class="signin-button">@ViewBag.Users[j].Username</h2>
+                            }
+                        }
+                    </div>
+
+                </div>
+                }
+            }
+               */
+        }
+    </div>
+</div>

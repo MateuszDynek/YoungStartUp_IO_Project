@@ -1,0 +1,144 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="align-content-center">
+    <div class="quote-form">
+        <h1 class="display-4 quote-style">~Great companies are built on great products~</h1>
+        <h1 class="display-4 quote-style">Elon Musk</h1>
+    </div>
+    <div class="quote">
+
+        
+        <div>
+            <h1 class="nav-link" style="font-size:25px" ;>The best rated Project</h1>
+            <h2 class="nav-link" style="font-size:25px" ;>@ViewBag.Projects[ViewBag.BestRatestP].Title</h2>
+            <div class="box box1" style="height:285px">
+                <button type="submit" style="background-color:transparent; border:none;">
+
+
+                    @if (((int)ViewBag.Projects[ViewBag.BestRatestP].Target) == 0)
+                    {
+
+                        <img class="project-img" src="~/img/game-console.png" />
+                    }
+                    else if ((int)ViewBag.Projects[ViewBag.BestRatestP].Target == 1)
+                    {
+                        <img class="project-img" src="~/img/internet-of-things.png" />
+                    }
+                    else if ((int)ViewBag.Projects[ViewBag.BestRatestP].Target == 2)
+                    {
+                        <img class="project-img" src="~/img/programing.png" />
+                    }
+                    else if ((int)ViewBag.Projects[ViewBag.BestRatestP].Target == 3)
+                    {
+                        <img class="project-img" src="~/img/web_app.png" />
+                    }
+                    else if ((int)ViewBag.Projects[ViewBag.BestRatestP].Target == 4)
+                    {
+                        <img class="project-img" src="~/img/bot.png" />
+                    }
+                    else
+                    {
+                        <img class="project-img" src="~/img/antispam.png" />
+                    }
+
+                    <p>
+                        @ViewBag.Projects[ViewBag.BestRatestP].Description
+                    </p>
+
+                </button>
+            </div>
+            <h2 class="signin-button">@ViewBag.Users[ViewBag.UserBRP].Username</h2>
+            <div class="bg"></div>
+        </div>
+        <div>
+            <div>
+                <h1 class="nav-link" style="font-size:25px;">The newest Project</h1>
+                <h2 class="nav-link" style="font-size:25px" ;>@ViewBag.Projects[ViewBag.NewestP].Title</h2>
+                <div class="box box2" style="height:285px">
+                    <button type="submit" style="background-color:transparent; border:none;">
+
+
+                        @if (((int)ViewBag.Projects[ViewBag.NewestP].Target) == 0)
+                        {
+
+                            <img class="project-img" src="~/img/game-console.png" />
+                        }
+                        else if ((int)ViewBag.Projects[ViewBag.NewestP].Target == 1)
+                        {
+                            <img class="project-img" src="~/img/internet-of-things.png" />
+                        }
+                        else if ((int)ViewBag.Projects[ViewBag.NewestP].Target == 2)
+                        {
+                            <img class="project-img" src="~/img/programing.png" />
+                        }
+                        else if ((int)ViewBag.Projects[ViewBag.NewestP].Target == 3)
+                        {
+                            <img class="project-img" src="~/img/web_app.png" />
+                        }
+                        else if ((int)ViewBag.Projects[ViewBag.NewestP].Target == 4)
+                        {
+                            <img class="project-img" src="~/img/bot.png" />
+                        }
+                        else
+                        {
+                            <img class="project-img" src="~/img/antispam.png" />
+                        }
+
+                        <p>
+                            @ViewBag.Projects[ViewBag.NewestP].Description
+                        </p>
+
+                    </button>
+                </div>
+                <h2 class="signin-button">@ViewBag.Users[ViewBag.UserNP].Username</h2>
+                <div class="bg"></div>
+            </div>
+        </div>
+        
+        <div>
+            <h1 class="nav-link" style="font-size:25px" ;>The most commented Project</h1>
+            <h2 class="nav-link" style="font-size:25px" ;>@ViewBag.Projects[ViewBag.MCommentedP].Title</h2>
+            <div class="box box3" style="height:285px">
+                <button type="submit" style="background-color:transparent; border:none;">
+
+
+                    @if (((int)ViewBag.Projects[ViewBag.MCommentedP].Target) == 0)
+                    {
+
+                        <img class="project-img" src="~/img/game-console.png" />
+                    }
+                    else if ((int)ViewBag.Projects[ViewBag.MCommentedP].Target == 1)
+                    {
+                        <img class="project-img" src="~/img/internet-of-things.png" />
+                    }
+                    else if ((int)ViewBag.Projects[ViewBag.MCommentedP].Target == 2)
+                    {
+                        <img class="project-img" src="~/img/programing.png" />
+                    }
+                    else if ((int)ViewBag.Projects[ViewBag.MCommentedP].Target == 3)
+                    {
+                        <img class="project-img" src="~/img/web_app.png" />
+                    }
+                    else if ((int)ViewBag.Projects[ViewBag.MCommentedP].Target == 4)
+                    {
+                        <img class="project-img" src="~/img/bot.png" />
+                    }
+                    else
+                    {
+                        <img class="project-img" src="~/img/antispam.png" />
+                    }
+
+                    <p>
+                        @ViewBag.Projects[ViewBag.MCommentedP].Description
+                    </p>
+
+                </button>
+            </div>
+            <h2 class="signin-button">@ViewBag.Users[ViewBag.UserMCP].Username</h2>
+            <div class="bg"></div>
+        </div>
+    </div>
+</div>
+

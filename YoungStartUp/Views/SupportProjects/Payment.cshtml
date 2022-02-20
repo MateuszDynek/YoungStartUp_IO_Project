@@ -1,0 +1,21 @@
+﻿@model YoungStartUp.Models.LogInUser
+@{ ViewData["Title"] = "Support Project"; }
+
+
+
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Post,
+                             new { @class = "login-form" }))
+{
+<div class="login-form-content">
+    <div class="login-form-header">
+        <h2>Thank you for supporting our project!</h2>
+    </div>
+    <div style="text-align:center">
+        <h3>Confirm payment in your bank application!</h3>
+
+
+
+        <button class="login-form-button" style="margin-top:10px" type="submit" value="SignIn">Return to main page</button>
+    </div>
+</div>}

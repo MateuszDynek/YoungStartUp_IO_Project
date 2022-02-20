@@ -1,0 +1,46 @@
+﻿@{
+    ViewData["Title"] = "User Panel";
+}
+
+<div class="align-content-center">
+    <div class="quote">
+        <div>
+            <h1 class="nav-link" style="font-size:25px" ;>Add project</h1>
+            <div class="box box4">
+                <button type="button" onclick="location.href='@Url.Action("AddProject","UserPanel")'" style="background-color:transparent; border:none;">
+                    <img class="project-img" src="~/img/project-plan.png" />
+                    <p>
+                        This option gives you opportunity to share with your amazing project!
+                    </p>
+                </button>
+            </div>
+            <div class="bg"></div>
+        </div>
+        <div>
+            <h1 class="nav-link" style="font-size:25px;">Show my projects</h1>
+            <div class="box box5">
+                <button type="button" onclick="location.href='@Url.Action("ShowProjects","UserPanel")'" style="background-color:transparent; border:none;">
+                    <img class="project-img" src="~/img/briefing.png" />
+                    <p>
+                        This option gives you opportunity to show your uploaded projects
+                    </p>
+                </button>
+            </div>
+            <div class="bg"></div>
+        </div>
+        <div>
+            <h1 class="nav-link" style="font-size:25px">Logout</h1>
+            <div class="box box6">
+                <form method="get">
+                <button style="background-color:transparent; border:none;" asp-controller="Login" asp-action="Logout">
+                    <img class="project-img" src="~/img/logout.png" />
+                    <p>
+                        This option gives you opportunity to simply log out
+                    </p>
+                </button>
+                    </form>
+            </div>
+            <div class="bg"></div>
+        </div>
+    </div>
+</div>
